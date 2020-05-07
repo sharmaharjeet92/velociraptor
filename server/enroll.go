@@ -48,7 +48,7 @@ func enroll(
 		request := &flows_proto.ArtifactCollectorArgs{
 			ClientId:   client_id,
 			Artifacts:  []string{constants.CLIENT_INFO_ARTIFACT},
-			Parameters: {},
+			Parameters: &flows_proto.ArtifactParameters{},
 		}
 		_, err = client.CollectArtifact(ctx, request)
 		if err != nil {
