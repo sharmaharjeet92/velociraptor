@@ -46,8 +46,9 @@ func enroll(
 		defer closer()
 
 		request := &flows_proto.ArtifactCollectorArgs{
-			ClientId:  client_id,
-			Artifacts: []string{constants.CLIENT_INFO_ARTIFACT},
+			ClientId:   client_id,
+			Artifacts:  []string{constants.CLIENT_INFO_ARTIFACT},
+			Parameters: {},
 		}
 		_, err = client.CollectArtifact(ctx, request)
 		if err != nil {
